@@ -21,6 +21,7 @@
     "@angular/router": "^14.2.0",
     "@nafuzi/firebase-auth-error-translator": "^1.2.5",
     "@ngrx/store": "^14.3.2",
+    "@ngrx/store-devtools": "^14.3.2",
     "bootstrap": "^4.1.1",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.5.0",
