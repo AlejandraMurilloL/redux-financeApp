@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-finance',
@@ -8,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinanceComponent implements OnInit {
 
-  constructor() { }
+  incomeForm!: FormGroup;
+  type: string = 'ingreso';
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.incomeForm = this.fb.group({
+      description: ['', Validators.required],
+      amount: ['', Validators.required],
+    });
   }
 
+  doSave() {
+
+    if (this.incomeForm.invalid) return;
+
+    console.log(this.incomeForm.value);
+    console.log(this.type);
+  }
 }
